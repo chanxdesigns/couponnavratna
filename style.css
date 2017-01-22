@@ -1,0 +1,36 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+body {
+    background: #e66887;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.container {
+    padding: 0 15%;
+}
+
+.main-body {
+    padding: 50px 0;
+}
+
+.time {
+    margin: 0;
+}
+
+.logout {
+    padding: 5px 20px;
+    color: black;
+    background: #ffa500;
+}
