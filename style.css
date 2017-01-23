@@ -29,6 +29,10 @@ body {
     margin: 0;
 }
 
+.balance {
+    font-size: 10px!important;
+}
+
 .logout {
     padding: 5px 20px;
     color: black;
