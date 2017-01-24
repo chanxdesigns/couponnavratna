@@ -2,11 +2,16 @@ html,
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial;
+    font-family: 'Verdana', Arial, sans-serif;
+    font-size: 14px;
 }
 
 body {
-    background: #e66887;
+    background: white;
+}
+
+.clearfix {
+    clear: both;
 }
 
 .pull-left {
@@ -18,23 +23,249 @@ body {
 }
 
 .container {
-    padding: 0 15%;
+    width: 1100px;
+    margin: 0 auto;
+    background: #e66887;
 }
 
 .main-body {
-    padding: 50px 0;
+    padding: 20px 40px;
+    height: 580px;
 }
-
+.scrolling-text {
+    padding: 0 0 20px 0;
+}
+.left-body {
+    width: 750px;
+    margin-top: 22px;
+}
+.right-body {
+    position: relative;
+}
+.right-body .text-body {
+    position: relative;
+    top: 40px;
+}
+.right-body .text {
+    text-align: right;
+    margin: 5px 0;
+}
+.text.site-time {
+    font-size: 12px;
+}
+#drawtime {
+    font-weight: bold;
+}
 .time {
     margin: 0;
 }
 
 .balance {
-    font-size: 10px!important;
+    font-size: 12px!important;
 }
 
 .logout {
+    position: absolute;
+    right: 0;
+    top: 0;
     padding: 5px 20px;
     color: black;
     background: #ffa500;
+}
+
+/**
+    Buttons White
+ */
+.buttons {
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    margin-right: 20px;
+    font-size: 14px;
+    font-family: 'Arial', Verdana, sans-serif;
+    cursor: pointer;
+}
+.buttons.white {
+    color: black;
+    background: #FFEEB4;
+    width: 170px;
+}
+.buttons.blue {
+    color: white;
+    background: #000D6B;
+    width: 150px;
+}
+.buttons.last {
+    margin-right: 0;
+}
+
+/**
+Footer Buttons
+ */
+.footer {
+    margin-top: 20px;
+}
+.footer-text {
+    margin: 0 0 5px 0;
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px;
+    color: white;
+}
+.footer-text.small {
+    font-size: 12px;
+}
+.buttons.red {
+    background: #FF0000;
+    width: 140px;
+    color: white;
+}
+.buttons.red.no-margin {
+    margin-right: 0;
+}
+.buttons.green {
+    background: #006000;
+    width: 60px;
+    color: white;
+}
+
+/**
+Tables
+ */
+.table {
+    margin-top: 2px;
+    position: relative;
+    top: 2px;
+}
+table.main {
+    border-spacing: 0;
+}
+table.main th {
+    text-align: center;
+    color: #274F7D;
+    vertical-align: middle;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    height: 30px;
+    margin-right: 1px;
+    font-size: 12px;
+}
+table.main th:last-of-type {
+    border-right: 1px solid black;
+}
+table.main th:last-of-type {
+    margin-right:0;
+}
+table.main tr:nth-child(odd) {
+    background: #FFEEB4;
+}
+table.main tr:nth-child(even) {
+    background: #DDCE9C;
+}
+.coupon-name {
+    width: 150px;
+    font-weight: bold;
+}
+td {
+    height: 40px;
+    padding: 0 5px;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    font-weight: bold;
+    text-align: center;
+    font-size: 13px;
+}
+td:last-of-type {
+    border-right: 1px solid black;
+}
+td.coupon-name {
+    text-align: left;
+    text-transform: uppercase;
+}
+td input {
+    width: 40px;
+    height: 28px;
+    text-align: center;
+}
+.win {
+    width:50px;
+}
+.win-text {
+    font-style: italic;
+}
+.numbers {
+    width: 60px;
+}
+.qty {
+    width: 40px;
+}
+.points {
+    width: 50px;
+}
+#current-wins {
+    width: 80px;
+}
+.total {
+    border-spacing: 0;
+    background: #DDCE9C;
+}
+.total-text {
+    width: 829px;
+    text-align: right;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+}
+.total-qty {
+    width: 32px;
+}
+.total-points {
+    width: 42px;
+}
+.total-win {
+    width: 72px;
+}
+.login {
+    border-spacing: 0;
+    background: #FFEEB4;
+    width: 1020px;
+}
+.login td {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    font-family: Arial,sans-serif;
+    font-size: 16px;
+}
+.login td:first-of-type {
+    border-left: 1px solid black;
+}
+.login td:last-of-type {
+    border-right: 1px solid black;
+}
+.login td input {
+    height: 15px;
+    width: 200px;
+}
+.login .card-no {
+    width: 250px;
+}
+.login .pin-no {
+    width: 250px;
+}
+.login .login-button {
+    width: 250px;
+    text-align: left;
+}
+.login-button button {
+    padding: 4px 15px;
+    outline: none;
+    border: 1px solid #006000;
+    background: whitesmoke;
+    color: #006000;
+    font-family: "Trebuchet MS", sans-serif;
+    font-weight: bold;
+    font-size: 14px;
 }

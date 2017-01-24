@@ -7,17 +7,172 @@
     <link rel="stylesheet" href="style.css">
     <title>Navratna Coupon - Welcome to Navratna Coupon</title>
 </head>
-<body>
+<body onload="window.setTimeout(clocks, 1000);">
 
 <div class="container">
     <div class="main-body">
+        <div class="scrolling-text">
+            <marquee>
+                <p style="margin: 0; color: black; font-weight: bold">Welcome Guest Player ....</p>
+                <p style="margin: 0; color: yellow; font-weight: bold">Navratna Coupon</p>
+            </marquee>
+        </div>
+
         <div class="pull-left">
             <p class="time"><strong>Server Time: </strong><span class="left-time"></span></p>
             <p class="balance"><strong>Balance Points 0</strong></p>
+            <div class="left-body">
+            <a onclick="revisit()" href="" class="buttons white pull-left">Bulk Coupons</a>
+            <a onclick="revisit()" href="" class="buttons blue pull-left">Pointwise Coupons</a>
+            <a onclick="revisit()" href="" class="buttons blue pull-left">Loose Coupons</a>
+            <a onclick="revisit()" href="" class="buttons blue pull-left last">LoosePoints Wise</a>
+            </div>
         </div>
         <div class="pull-right">
+            <div class="right-body">
             <a class="logout">Logout</a>
+                <div class="text-body">
+                    <p class="text site-time"><strong>Site Time: <span id="site-time"></span></strong></p>
+                    <p class="text">Coupon Draw Time: <span id="drawtime"></span></p>
+                    <p class="text">Time Left for Draw: -<span id="timeleft"></span></p>
+                </div>
+            </div>
         </div>
+
+        <!--<iframe src="https://docs.google.com/spreadsheets/d/1OuG2CsJJrN1DsUaefqK5JRW25IQI6qD4rGTUBhKk4O0/pubhtml?widget=true&amp;headers=false"></iframe>-->
+        <div class="table">
+            <table class="main">
+                <tr>
+                    <th class="coupon-name">Coupon Name</th>
+                    <th class="win">Win</th>
+                    <th class="numbers">00-09</th>
+                    <th class="numbers">10-19</th>
+                    <th class="numbers">20-29</th>
+                    <th class="numbers">30-39</th>
+                    <th class="numbers">40-49</th>
+                    <th class="numbers">50-59</th>
+                    <th class="numbers">60-69</th>
+                    <th class="numbers">70-79</th>
+                    <th class="numbers">80-89</th>
+                    <th class="numbers">90-99</th>
+                    <th class="qty">Qty.</th>
+                    <th class="points">Points</th>
+                    <th id="current-wins"></th>
+                </tr>
+                <tr>
+                    <td class="coupon-name">Navratna Coupon</td>
+                    <td class="win-text">100</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td id="navratna-win">28</td>
+                </tr>
+                <tr>
+                    <td class="coupon-name">Punjab Coupon</td>
+                    <td class="win-text">100</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td id="punjab-win">12</td>
+                </tr>
+                <tr>
+                    <td class="coupon-name">Satyam Coupon</td>
+                    <td class="win-text">100</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td id="satyam-win">60</td>
+                </tr>
+                <tr>
+                    <td class="coupon-name">Jackpot Coupon</td>
+                    <td class="win-text">100</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td id="jackpot-win">45</td>
+                </tr>
+            </table>
+            <table class="total">
+                <tr>
+                    <td class="total-text">Total</td>
+                    <td class="total-qty"></td>
+                    <td class="total-points"></td>
+                    <td class="total-win"></td>
+                </tr>
+            </table>
+            <table class="login">
+                <tr>
+                    <td class="card-no">
+                        <label>Card No:</label>
+                        <input type="text">
+                    </td>
+                    <td class="pin-no">
+                        <label>Pin No:</label>
+                        <input type="text">
+                    </td>
+                    <td class="login-button">
+                        <button onclick="revisit()" >Login</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Footer Buttons -->
+        <div class="footer">
+            <a onclick="revisit()" href="" class="buttons green pull-left">BUY</a>
+            <a onclick="revisit()" href="" class="buttons red pull-left">CLEAR</a>
+            <a onclick="revisit()" href="" class="buttons red pull-left">CURR COUPON</a>
+            <a onclick="revisit()" href="" class="buttons red pull-left">MORE COUPON</a>
+            <a onclick="revisit()" href="" class="buttons red pull-left">CANCEL</a>
+            <a onclick="revisit()" href="" class="buttons red pull-left">YANTRA</a>
+            <a onclick="revisit()" href="" class="buttons red pull-left no-margin">REPORT</a>
+            <div class="clearfix"></div>
+            <br>
+            <br>
+            <p class="footer-text">For Yantra Code:- Reach us info@navratnacoupon.com</p>
+            <p class="footer-text small">Copyright @ 2015 www.navratnacoupon.com All rights reserved.</p>
+        </div>
+
+    </div>
+    <div class="hidden-forms">
+        <input type="text" hidden id="hidden-minutes">
+        <input type="text" hidden id="hidden-seconds">
     </div>
 </div>
 <script src="date.js"></script>
