@@ -1,3 +1,12 @@
+<?php
+
+    include 'admin/LoginClass.php';
+
+    $query = "SELECT * FROM winning_coupons ORDER BY id DESC LIMIT 1";
+    $get_coupon = new LoginClass();
+    $coupon = $get_coupon->query($query);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,7 +83,7 @@
                     <td><input type="text"></td>
                     <td>0</td>
                     <td>0</td>
-                    <td id="navratna-win">28</td>
+                    <td id="navratna-win"><?php echo $coupon['navratna']; ?></td>
                 </tr>
                 <tr>
                     <td class="coupon-name">Punjab Coupon</td>
@@ -91,7 +100,7 @@
                     <td><input type="text"></td>
                     <td>0</td>
                     <td>0</td>
-                    <td id="punjab-win">12</td>
+                    <td id="punjab-win"><?php echo $coupon['punjab']; ?></td>
                 </tr>
                 <tr>
                     <td class="coupon-name">Satyam Coupon</td>
@@ -108,7 +117,7 @@
                     <td><input type="text"></td>
                     <td>0</td>
                     <td>0</td>
-                    <td id="satyam-win">60</td>
+                    <td id="satyam-win"><?php echo $coupon['satyam']; ?></td>
                 </tr>
                 <tr>
                     <td class="coupon-name">Jackpot Coupon</td>
@@ -125,7 +134,7 @@
                     <td><input type="text"></td>
                     <td>0</td>
                     <td>0</td>
-                    <td id="jackpot-win">45</td>
+                    <td id="jackpot-win"><?php echo $coupon['jackpot']; ?></td>
                 </tr>
             </table>
             <table class="total">

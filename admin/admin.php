@@ -2,9 +2,24 @@
 
 session_start();
 
-//if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
-//    header('location: http://www.facebook.com');
-//}
+include 'LoginClass.php';
+
+if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
+    header('location: http://localhost/couponnavratna/admin/login.php');
+}
+else {
+    if (!empty($_POST)) {
+        $navratna = $_POST['navratna'];
+        $punjab = $_POST['punjab'];
+        $satyam = $_POST['satyam'];
+        $jackpot = $_POST['jackpot'];
+
+        $sql = "INSERT INTO winning_coupons (navratna, punjab, satyam, jackpot) VALUES ($navratna,$punjab,$satyam,$jackpot)";
+        $entry = new LoginClass();
+        $entry->insert($sql);
+
+    }
+}
 
 ?>
 
@@ -16,7 +31,7 @@ session_start();
         <title>Admin Page</title>
     </head>
 <body>
-<form class="form">
+<form class="form" method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
     <input class="form-input" type="number" name="navratna" placeholder="Enter Navratna Coupon Number">
     <input class="form-input" type="number" name="punjab" placeholder="Enter Punjab Coupon Number">
     <input class="form-input" type="number" name="satyam" placeholder="Enter Satyam Coupon Number">

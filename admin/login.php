@@ -2,28 +2,31 @@
 
 session_start();
 
+include 'LoginClass.php';
+
 if (!empty($_SESSION['username']) && !empty($_SESSION['password'])) {
-    header('location: http://www.google.com');
+    header('location: http://localhost/couponnavratna/admin/admin.php');
 }
 else {
     if (!empty($_POST)) {
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        define('DB_NAME', 'couponnavratna');
-        define('DB_USER', 'root');
-        define('DB_PASS', '');
-        define('DB_HOST', 'localhost');
+        $sql = "SELECT * FROM admin WHERE username = "."'$username'"."AND password = "."'$password'";
+        $login = new LoginClass();
+        $res = $login->query($sql);
 
-        $conn = mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
-        if (mysqli_connect_errno()) {
-            die('Connection failed');
+        if ($res) {
+            $_SESSION['username'] = $res['username'];
+            $_SESSION['password'] = $res['password'];
+            header("location: http://localhost/couponnavratna/admin/admin.php");
         }
-        //$data = mysqli_query($conn, "SELECT username FROM admin WHERE `username` = $username AND `password` = $password");
-        //var_dump(mysqli_fetch_assoc($data));
+        else {
+            echo "Login Failed";
+        }
     }
     else {
-
+        echo "Login details empty!!";
     }
 }
 
