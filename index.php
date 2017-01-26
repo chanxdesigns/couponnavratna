@@ -174,8 +174,8 @@
             <div class="clearfix"></div>
             <br>
             <br>
-            <p class="footer-text">For Yantra Code:- Reach us info@navratnacoupon.com</p>
-            <p class="footer-text small">Copyright @ 2015 www.navratnacoupon.com All rights reserved.</p>
+            <p class="footer-text">For Yantra Code:- Reach us couponnavratna@gmail.com</p>
+            <p class="footer-text small">Copyright @ 2015 www.couponnavratna.com All rights reserved.</p>
         </div>
 
     </div>
