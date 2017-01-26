@@ -5,7 +5,7 @@ session_start();
 include 'LoginClass.php';
 
 if (!empty($_SESSION['username']) && !empty($_SESSION['password'])) {
-    header('location: http://localhost/couponnavratna/admin/admin.php');
+    header('location: http://couponnavratna.com/admin/admin.php');
 }
 else {
     if (!empty($_POST)) {
@@ -19,7 +19,7 @@ else {
         if ($res) {
             $_SESSION['username'] = $res['username'];
             $_SESSION['password'] = $res['password'];
-            header("location: http://localhost/couponnavratna/admin/admin.php");
+            header("location: http://couponnavratna.com/admin/admin.php");
         }
         else {
             echo "Login Failed";
