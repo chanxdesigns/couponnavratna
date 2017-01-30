@@ -9,13 +9,13 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
 }
 else {
     if (!empty($_POST)) {
-        $time = $_POST['time'];
+        $newtime = $_POST['time'];
         $navratna = $_POST['navratna'];
         $punjab = $_POST['punjab'];
         $satyam = $_POST['satyam'];
         $jackpot = $_POST['jackpot'];
 
-        $sql = "INSERT INTO winning_coupons (time, navratna, punjab, satyam, jackpot) VALUES ($time,$navratna,$punjab,$satyam,$jackpot)";
+        $sql = "INSERT INTO winning_coupons (newtime, navratna, punjab, satyam, jackpot) VALUES ($newtime,$navratna,$punjab,$satyam,$jackpot)";
         $entry = new LoginClass();
         $entry->insert($sql);
 
