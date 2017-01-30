@@ -9,12 +9,13 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
 }
 else {
     if (!empty($_POST)) {
+        $time = $_POST['time'];
         $navratna = $_POST['navratna'];
         $punjab = $_POST['punjab'];
         $satyam = $_POST['satyam'];
         $jackpot = $_POST['jackpot'];
 
-        $sql = "INSERT INTO winning_coupons (navratna, punjab, satyam, jackpot) VALUES ($navratna,$punjab,$satyam,$jackpot)";
+        $sql = "INSERT INTO winning_coupons (time, navratna, punjab, satyam, jackpot) VALUES ($time,$navratna,$punjab,$satyam,$jackpot)";
         $entry = new LoginClass();
         $entry->insert($sql);
 
@@ -32,6 +33,7 @@ else {
     </head>
 <body>
 <form class="form" method="post" action="<?php $_SERVER['PHP_SELF'] ?>">
+    <input class="form-input" type="text" name="time" placeholder="Enter Time">
     <input class="form-input" type="number" name="navratna" placeholder="Enter Navratna Coupon Number">
     <input class="form-input" type="number" name="punjab" placeholder="Enter Punjab Coupon Number">
     <input class="form-input" type="number" name="satyam" placeholder="Enter Satyam Coupon Number">

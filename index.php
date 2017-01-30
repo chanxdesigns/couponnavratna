@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Navratna Coupon - Welcome to Navratna Coupon</title>
 </head>
-<body onload="window.setTimeout(clocks, 1000);">
+<body onload="window.setTimeout('LoadtheClocks()', 1000);">
 
 <div class="container">
     <div class="main-body">
@@ -41,9 +41,9 @@
             <div class="right-body">
             <a class="logout">Logout</a>
                 <div class="text-body">
-                    <p class="text site-time"><strong>Site Time: <span id="site-time"></span></strong></p>
-                    <p class="text">Coupon Draw Time: <span id="drawtime"></span></p>
-                    <p class="text">Time Left for Draw: -<span id="timeleft"></span></p>
+                    <p class="text site-time"><strong>Site Time: <span id="basicclock"></span></strong></p>
+                    <p class="text">Coupon Draw Time: <span id="basicclock2"></span></p>
+                    <p class="text">Time Left for Draw: <span id="basicclock3"></span></p>
                 </div>
             </div>
         </div>
@@ -66,7 +66,7 @@
                     <th class="numbers">90-99</th>
                     <th class="qty">Qty.</th>
                     <th class="points">Points</th>
-                    <th id="current-wins"></th>
+                    <th id="current-wins"><?php echo $coupon['time']; ?></th>
                 </tr>
                 <tr>
                     <td class="coupon-name">Navratna Coupon</td>
@@ -179,9 +179,14 @@
         </div>
 
     </div>
+
     <div class="hidden-forms">
-        <input type="text" hidden id="hidden-minutes">
-        <input type="text" hidden id="hidden-seconds">
+        <input type="hidden" name="hiddenCurrentHours" id="hiddenCurrentHours" value="12" />
+        <input type="hidden" name="hiddenCurrentLongHours" id="hiddenCurrentLongHours" value="12" />
+        <input type="hidden" name="hiddenCurrentMinutes" id="hiddenCurrentMinutes" value="12" />
+        <input type="hidden" name="hiddenCurrentSeconds" id="hiddenCurrentSeconds" value="12" />
+        <input type="hidden" name="hiddenIsAMorPM" id="hiddenIsAMorPM" />
+        <input type="hidden" name="hdnAdjustTimeMinute" id="hdnAdjustTimeMinute" value="0" />
     </div>
 </div>
 <script src="date.js"></script>
