@@ -79,11 +79,11 @@ function clock2() {
     var minutes = Number(document.getElementById("hiddenCurrentMinutes").value);
     var seconds = document.getElementById("hiddenCurrentSeconds").value;
     var dispTime = "";
-    if (((hours < 8) || (hours == 8) && (minutes < 30)) || (hours == 0)) {
-        dispTime = "8:30 AM";
+    if (((hours < 8)) || (hours == 0)) {
+        dispTime = "8:00 AM";
     }
     else {
-        if ((hours >= 22) && (seconds > 0)) {
+        if ((hours >= 20) && (seconds > 0)) {
             dispTime = "Tomorrow";
         }
         else {
@@ -122,15 +122,15 @@ function clock3() {
     //how to avoid times like 6:45 ==first check all hours before 8
     //for 8:00 and 8:15 am =2nd check
     //for 24 hours =3rd check
-    if (((hours < 8) || (hours == 8) && (minutes < 30)) || (hours == 0)) {
+    if (((hours < 8)) || (hours == 0)) {
 
-        dispTime = "starts 8:30";
+        dispTime = "Starts 8:00 AM";
     }
     // to let 8:15, 8:45,9am etc run properly
 
     else {
-        if ((hours >= 22) && (seconds > 0)) {
-            dispTime = "8:30 AM";
+        if ((hours >= 20) && (seconds > 0)) {
+            dispTime = "8:00 AM";
         }
         else {
 
@@ -171,7 +171,7 @@ function clock3() {
         location.reload(true);
     }
 
-    if ((hours == 8) && (minutes == 29) && (seconds == 60)) {
+    if ((hours == 7) && (minutes == 59) && (seconds == 60)) {
         location.reload(true);
     }
     var basicclock = document.getElementById('basicclock3');
