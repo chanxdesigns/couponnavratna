@@ -66,7 +66,7 @@
                     <th class="numbers">90-99</th>
                     <th class="qty">Qty.</th>
                     <th class="points">Points</th>
-                    <th id="current-wins"><?php echo $coupon['time']; ?></th>
+                    <th id="current-wins"><?php echo $coupon['newtime']; ?></th>
                 </tr>
                 <tr>
                     <td class="coupon-name">Navratna Coupon</td>
